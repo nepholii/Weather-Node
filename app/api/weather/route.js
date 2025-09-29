@@ -8,13 +8,13 @@ export async function POST(req) {
       return NextResponse.json({ error: "City is required" }, { status: 400 });
     }
 
-    const API_KEY = "fc28c49a106f8b2811c505cac4ac997e"; // Replace with process.env.OPENWEATHER_API_KEY in production
+    const API_KEY = "fc28c49a106f8b2811c505cac4ac997e"; 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
 
     const res = await fetch(url);
 
     if (!res.ok) {
-      // Return OpenWeatherMap error message
+      
       const errorData = await res.json();
       return NextResponse.json({ error: errorData.message || "City not found" }, { status: 400 });
     }

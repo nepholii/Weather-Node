@@ -26,13 +26,13 @@ export default function Home() {
       const data = await res.json();
 
       if (!res.ok) {
-        setError(data.error || "❌ City not found");
+        setError(data.error || "City not found");
         return;
       }
 
       setWeather(data);
     } catch (err) {
-      setError("❌ Something went wrong");
+      setError("Something went wrong");
     }
   };
 
@@ -51,12 +51,12 @@ export default function Home() {
     <main
       className={`min-h-screen flex flex-col items-center justify-center bg-gradient-to-br ${getBgClass()} text-white px-6 py-10 transition-all duration-500`}
     >
-      {/* Title */}
+      {}
       <h1 className="text-4xl sm:text-5xl font-extrabold mb-10 text-white drop-shadow-lg">
         🌦 Weather Dashboard
       </h1>
 
-      {/* Search bar */}
+      {}
       <div className="flex gap-3 w-full max-w-md">
         <input
           type="text"
@@ -91,14 +91,14 @@ export default function Home() {
             {weather.weather[0].description}
           </p>
 
-          {/* Weather icon */}
+          {}
           <img
             src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`}
             alt="Weather Icon"
             className="mx-auto mt-4 animate-bounce"
           />
 
-          {/* Stats grid */}
+          {}
           <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
             <div className="bg-white/10 rounded-lg p-3 hover:bg-white/20 transition">
               💧 Humidity: {weather.main.humidity}%
